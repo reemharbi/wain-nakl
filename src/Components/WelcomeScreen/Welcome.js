@@ -4,6 +4,7 @@ import "./Welcome.css";
 import Suggestion from "./SuggestionButton";
 
 export default function Welcome() {
+  
   return (
     // <div className="main animated slideOutUp delay-5s">
     <div className="main">
