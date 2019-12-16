@@ -4,7 +4,7 @@
 }
 
 .container {
-  height: 60vh;
+  height: 70vh;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -20,4 +20,25 @@
   font-size: 3.5em;
   margin: 2rem 0;
   font-family: "Cairo", sans-serif;
+}
+
+.btn {
+    margin: 1rem 0;
+    padding: 1rem 4rem;
+    border: none;
+    border-radius: 1rem;
+    color: #2A5F64;
+    background-color: rgba(224, 244, 243, 0.75);
+    font-family: 'Cairo', sans-serif;
+    outline: none;
+}
+
+.btn:hover {
+    color: rgb(224, 244, 243);
+    background-color: rgb(110, 176, 182);
+}
+
+.btn:active {
+    color: #2A5F64;
+    background-color: rgba(224, 244, 243, 0.75);
 }
