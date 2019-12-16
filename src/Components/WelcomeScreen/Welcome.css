@@ -1,0 +1,23 @@
+.main {
+  height: 100vh;
+  background-color: rgba(43, 95, 98, 0.99);
+}
+
+.container {
+  height: 60vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo {
+  height: 10rem;
+}
+
+.title {
+  color: #e1f4f3;
+  font-size: 3.5em;
+  margin: 2rem 0;
+  font-family: "Cairo", sans-serif;
+}
