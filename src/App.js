@@ -14,7 +14,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    fetch("https://wainnakel.com/api/v1/GenerateFS.php?uid=24.7900733,46.7012105&get_param=value")
+    fetch("https://cors-anywhere.herokuapp.com/https://wainnakel.com/api/v1/GenerateFS.php?uid=24.7900733,46.7012105&get_param=value")
     .then(response => response.json())
     .then(resSuggestion => this.setState({restaurants: resSuggestion}))
   }

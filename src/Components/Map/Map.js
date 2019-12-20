@@ -15,8 +15,10 @@ export default class Map extends Component {
     zoom: 20
   };
   render() {
-    console.log('Restaurants Length: ',this.props.restaurants.length)
-    return !this.props.restaurants === null ? (
+    const restaurant = [this.props.restaurants.name]
+    console.log(this.props.restaurants);
+    console.log('Restaurants Length: ', restaurant.length)
+    return !restaurant.length ? (
       <BoxLoading className="loader" />
     ) : (
       <div>

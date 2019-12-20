@@ -11,5 +11,32 @@
 }
 
 .rest-name {
+  font-size: 3rem;
   font-family: "Work Sans", sans-serif;
+}
+
+.rest-details {
+  display: flex;
+  justify-content: center;
+}
+
+.category, .rating {
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: rgb(83, 83, 83);
+}
+
+.category {
+  margin: 0 2rem;
+}
+
+.rate {
+  /* margin: 0 3rem 0 0; */
+}
+
+.ten {
+  margin: 0.7rem 2rem 0 0;
+  font-weight: 100;
+  font-size: 1.3rem;
 }
