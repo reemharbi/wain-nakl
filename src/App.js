@@ -20,13 +20,10 @@ class App extends Component {
     };
   }
 
- userCoordinates = navigator.geolocation.getCurrentPosition(p =>
-   this.setState( 
-     {userLat: p.coords.latitude, 
-    userLon: p.coords.longitude
-   })
+  userCoordinates = navigator.geolocation.getCurrentPosition(p =>
+    this.setState({ userLat: p.coords.latitude, userLon: p.coords.longitude })
   );
- 
+
   componentDidMount() {
     fetch(
       `https://cors-anywhere.herokuapp.com/https://wainnakel.com/api/v1/GenerateFS.php?uid=${this.state.userLat},${this.state.userLon}&get_param=value`
@@ -35,21 +32,20 @@ class App extends Component {
       .then(resSuggestion => this.setState({ restaurants: resSuggestion }));
   }
 
+  // getUserLocation = async () => {
+  //   await navigator.geolocation.getCurrentPosition(this.showPosition);
+  // };
 
-  getUserLocation = async () => {
-    await navigator.geolocation.getCurrentPosition(this.showPosition);
-  };
-
-  showPosition = position => {
-    this.setState(
-      {
-        userLat: position.coords.latitude,
-        userLon: position.coords.longitude,
-        locRendered: true
-      },
-      newState => console.log("hi", newState)
-    );
-  };
+  // showPosition = position => {
+  //   this.setState(
+  //     {
+  //       userLat: position.coords.latitude,
+  //       userLon: position.coords.longitude,
+  //       locRendered: true
+  //     },
+  //     newState => console.log("hi", newState)
+  //   );
+  // };
 
   render() {
     console.log("Latitude:", this.state.userLat);
@@ -58,12 +54,15 @@ class App extends Component {
       return (
         <Map
           restaurants={this.state.restaurants}
-          getUserLocation={this.getUserLocation}
+          userLat={this.state.userLat}
+          userLon={this.state.userLon}
         />
       );
     };
     const WelcomePage = () => {
-      return <Welcome getUserLocation={this.getUserLocation} />;
+      return (
+        <Welcome userLat={this.state.userLat} userLon={this.state.userLon} />
+      );
     };
     return (
       <HashRouter>

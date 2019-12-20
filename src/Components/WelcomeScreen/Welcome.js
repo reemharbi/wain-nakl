@@ -19,7 +19,6 @@ const Welcome = getUserLocation => {
           <Link
             to="/suggestion"
             className="btn animated fadeIn"
-            onClick={getUserLocation}
           >
             اقترح
           </Link>

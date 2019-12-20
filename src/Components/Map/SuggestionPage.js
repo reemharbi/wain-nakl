@@ -20,32 +20,38 @@ export class SuggestionPage extends Component {
     selectedPlace: {},
     redirect: false,
     redirectId: 0
-}
+  };
 
-getUserLocation = () => {
-  if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(this.showPosition)
-  }
-}
+  getUserLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.showPosition, {timeout: 1000});
+    }
+  };
 
-showPosition = position => {
-  this.setState({
+  showPosition = position => {
+    this.setState({
       userLat: position.coords.latitude,
       userLon: position.coords.longitude,
       locRendered: true
-  })
-}
+    });
+  };
+
+  
   render() {
     const restaurant = [this.props.restaurants.name];
     console.log(this.props.restaurants);
     console.log("Restaurants Length: ", restaurant.length);
-
+    console.log('Suggestion Lat: ', this.props.userLat);
+    console.log('Suggestion Lon: ', this.props.userLon);
+    console.log('Me: ', '24.803226, 46.705452')
     return !restaurant.length === 0 ? (
       <BoxLoading />
     ) : (
       <div>
         <div className="main-suggestion">
-          <div><Navbar /></div>
+          <div>
+            <Navbar />
+          </div>
           <div className="suggestion-container">
             <Suggestion restaurants={this.props.restaurants} />
           </div>
@@ -54,7 +60,7 @@ showPosition = position => {
           <Map
             google={this.props.google}
             zoom={20}
-            initialCenter={{ lat: 24.753717, lng: 46.611116 }}
+            initialCenter={{ lat: `${this.props.userLat}`, lng: `${this.props.userLon}` }}
           >
             <Marker
             // position={{ lat: 24.7900733, lng: 46.7012105 }}
@@ -62,7 +68,7 @@ showPosition = position => {
           </Map>
           <div className="another-suggestion">
             <Link to="/suggestion" className="another-suggestion-btn">
-             اقترح أخر
+              اقترح أخر
             </Link>
           </div>
         </div>
