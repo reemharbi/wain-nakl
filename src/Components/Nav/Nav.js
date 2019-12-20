@@ -10,7 +10,7 @@ export default class Nav extends Component {
       <div className="nav-container navbar navbar-fixed-top">
         <div className="item hstry">
           <a className="nav-title" href="/">
-            <img style={{ height: "3rem" }} src={history}></img>
+            <img style={{ height: "3rem" }} src={history} alt='history'></img>
           </a>
         </div>
         <div className="nav-item text-center">
@@ -18,12 +18,12 @@ export default class Nav extends Component {
             وين ناكل
           </a>
           <a className="nav-title" href="/">
-            <img style={{ height: "4rem" }} src={logo}></img>
+            <img style={{ height: "4rem" }} src={logo} alt='logo'></img>
           </a>
         </div>
         <div className="item brgr">
           <a className="nav-title" href="/">
-            <img style={{ height: "3rem" }} src={burger}></img>
+            <img style={{ height: "3rem" }} src={burger} alt='burger'></img>
           </a>
         </div>
       </div>

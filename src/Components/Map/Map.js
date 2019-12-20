@@ -1,38 +1,41 @@
-import React, { Component } from 'react'
-import GoogleMapReact from 'google-map-react'
-import Navbar from '../Nav/Nav'
-import Suggestion from './Suggestion'
+import React, { Component } from "react";
+import GoogleMapReact from "google-map-react";
+import Navbar from "../Nav/Nav";
+import Suggestion from "./Suggestion";
+import { BoxLoading } from "react-loadingg";
 
-const AnyReactComponent = ({ text }) => <div>{ text }</div>;
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 export default class Map extends Component {
-    static defaultProps = {
-        center: {
-          lat: 24.7900733,
-          lng: 46.7012105
-        },
-        zoom: 20
-      };      
+  static defaultProps = {
+    center: {
+      lat: 24.7900733,
+      lng: 46.7012105
+    },
+    zoom: 20
+  };
   render() {
-    return (
+    return !this.props.restaurants.length ? (
+      <BoxLoading className="loader" />
+    ) : (
       <div>
         <div className="navbar">
-        <Navbar />
+          <Navbar />
         </div>
-      <Suggestion />
-      <div style={{ height: '80vh', width: '100%' }}>
-        <GoogleMapReact
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
+        <Suggestion />
+        <div style={{ height: "80vh", width: "100%" }}>
+          <GoogleMapReact
+            defaultCenter={this.props.center}
+            defaultZoom={this.props.zoom}
           >
-          <AnyReactComponent
-            lat={24.7900733}
-            lng={46.7012105}
-            text="Reem's Office"
+            <AnyReactComponent
+              lat={24.7900733}
+              lng={46.7012105}
+              text="Reem's Office"
             />
-        </GoogleMapReact>
+          </GoogleMapReact>
+        </div>
       </div>
-            </div>
     );
   }
 }

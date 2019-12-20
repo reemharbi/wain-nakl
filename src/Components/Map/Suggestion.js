@@ -12,10 +12,10 @@ export default class Suggestion extends Component {
           <h1 className="rest-name text-center">AlMuzaini's House</h1>
         </div>
         <div className="flex-container">
-        <img src={map} style={{height:'4rem'}}></img>
-        <img src={photo} style={{height:'4rem'}}></img>
-        <img src={like} style={{height:'4rem'}}></img>
-        <img src={share} style={{height:'4rem'}}></img>
+        <img src={map} style={{height:'4rem'}} alt='map'></img>
+        <img src={photo} style={{height:'4rem'}} alt='restaurant-images'></img>
+        <img src={like} style={{height:'4rem'}} alt='like'></img>
+        <img src={share} style={{height:'4rem'}} alt='share'></img>
         </div>
       </div>
     );

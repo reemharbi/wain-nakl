@@ -3,8 +3,7 @@ import Welcome from "./Components/WelcomeScreen/Welcome";
 import Map from "./Components/Map/Map";
 import { BrowserRouter as Router, Route, HashRouter } from "react-router-dom";
 import "./App.css";
-import Navbar from "./Components/Nav/Nav";
-import { render } from "@testing-library/react";
+
 
 class App extends Component {
   constructor() {
@@ -17,13 +16,18 @@ class App extends Component {
   componentDidMount(){
 
   }
+
   
   render() {
-    return (
+    const MyMap = (props) => {
+       return <Map restaurants={this.state.restaurants} />
+     }
+
+    return  (
       <HashRouter>
         <div className="App">
           <Route exact path="/" component={Welcome} />
-          <Route exact path="/suggestion" component={Map} />
+          <Route exact path="/suggestion" render={MyMap} />
         </div>
       </HashRouter>
     );
