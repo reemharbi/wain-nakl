@@ -1,6 +1,15 @@
+.main-main {
+  background-image: url("../../Assets/Images/map.png");
+}
+
 .main {
   height: 100vh;
-  background-color: rgba(43, 95, 98, 0.99);
+  background: rgba(44, 150, 154,0.93);
+  background: linear-gradient(
+    180deg,
+    rgba(44, 150, 154, 0.93) 0%,
+    rgba(30, 102, 137, 0.93) 100%
+  );
 }
 
 .container {
@@ -11,8 +20,44 @@
   flex-direction: column;
 }
 
+@keyframes bounceInUp {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  from {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, -20px, 0);
+  }
+
+  75% {
+    transform: translate3d(0, 10px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, -5px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.bounceInUp {
+  animation-name: bounceInUp;
+}
+
 .logo {
-  height: 10rem;
+  height: 18rem;
 }
 
 .title {
@@ -23,22 +68,23 @@
 }
 
 .btn {
-    margin: 1rem 0;
-    padding: 1rem 4rem;
-    border: none;
-    border-radius: 1rem;
-    color: #2A5F64;
-    background-color: rgba(224, 244, 243, 0.75);
-    font-family: 'Cairo', sans-serif;
-    outline: none;
+  margin: 4rem 0 0 0;
+  padding: 1rem 4rem;
+  border: none;
+  border-radius: 1rem;
+  color: #2a5f64;
+  background-color: rgb(224, 244, 243);
+  font-family: "Cairo", sans-serif;
+  font-size: 2rem;
+  outline: none;
 }
 
 .btn:hover {
-    color: rgb(224, 244, 243);
-    background-color: rgb(110, 176, 182);
+  color: rgb(224, 244, 243);
+  background-color: rgb(14, 58, 80);
 }
 
 .btn:active {
-    color: #2A5F64;
-    background-color: rgba(224, 244, 243, 0.75);
+  color: #2a5f64;
+  background-color: rgba(224, 244, 243, 0.75);
 }

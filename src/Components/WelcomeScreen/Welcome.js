@@ -1,28 +1,43 @@
 import React, { Component } from "react";
 import logo from "../../Assets/Images/wain-nakl.png";
+import Map from "../Map/Map";
 import "./Welcome.css";
-export default class Welcome extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { active: false };
-  }
+import { Link } from "react-router-dom";
 
-  handleSuggestionClick = e => {
-    this.setState({ active: true });
-    e.stopPropagation();
-    console.log("handling Suggestion Click!");
-  };
+export default class Welcome extends Component {
+  // constructor(){
+  //   super();
+  //   this.state = { active: false };
+  // }
+
+  //   handleSuggestionClick = e => {
+  //       e.stopPropagation();
+  //       this.setState({ active: true });
+  //       console.log('Handle Suggestion Button Clicked!')
+  //       return(
+  //         <Map />
+  //       )
+  //  };
 
   render() {
-    const animation = this.state.active ? "animated slideOutUp" : "";
+    // const animation = this.state.active ? "animated" : "";
     return (
-      // <div className="main animated slideOutUp delay-5s">
-      <div className={`main ${animation}`}>
-        <div className="container">
-          <img className="logo" src={logo} alt="logo"></img>
-          <p className="title">وين ناكل؟</p>
-        <button className='btn' onClick={this.handleSuggestionClick}>اقترح</button>
-         </div>
+      <div className='main-main'>
+        <div className={`main`}>
+          <div className="container">
+            <div className="logo-container">
+              <img
+                className="logo animated bounceInUp"
+                src={logo}
+                alt="logo"
+              ></img>
+            </div>
+            <p className="title animated pulse">وين ناكل؟</p>
+            <Link to="/suggestion" className="btn animated fadeIn">
+              اقترح
+            </Link>
+          </div>
+        </div>
       </div>
     );
   }

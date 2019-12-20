@@ -1,0 +1,15 @@
+.flex-container {
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 2rem;
+}
+
+.name {
+  margin: 4rem 0 2rem 0;
+  color: rgb(30, 102, 137);
+}
+
+.rest-name {
+  font-family: "Work Sans", sans-serif;
+}

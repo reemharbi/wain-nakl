@@ -1,0 +1,43 @@
+div {
+  /* border: 1px solid red; */
+}
+
+.nav-container {
+  background-color: rgba(55, 134, 153, 95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem 0;
+  flex-wrap: wrap;
+}
+
+.nav-title {
+  font-family: "Cairo", sans-serif;
+  font-size: 2rem;
+  color: white;
+  margin: 1rem 1rem 0 0;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.item {
+  font-family: "Cairo", sans-serif;
+  font-size: 2rem;
+  color: white;
+  margin: 1rem 0 0 1rem;
+}
+
+.nav-item {
+    /* margin: 0 34vw; */
+    flex-grow: 2;
+}
+
+.brgr {
+margin: 0 1rem 0 0;
+}
+
+.hstry {
+    margin: 0 0 0 1rem;
+}
