@@ -21,7 +21,7 @@ export default class Suggestion extends Component {
           <p className="category"> {this.props.restaurants.cat}</p>
         </div>
         <div className="flex-container">
-          <a href={this.props.restaurants.link} target="_blank">
+          <a href={this.props.restaurants.link} target="_blank" rel="noopener noreferrer">
             <img src={map} style={{ height: "4rem" }} alt="map"></img>
           </a>
           <img
