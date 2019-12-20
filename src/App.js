@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Welcome from "./Components/WelcomeScreen/Welcome";
 import Map from "./Components/Map/SuggestionPage";
+import History from './Components/History/HistoryList';
 import { BrowserRouter as Router, Route, HashRouter } from "react-router-dom";
 import "./App.css";
 
@@ -8,6 +9,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      history: [],
       restaurants: [],
       userLat: 0,
       userLon: 0,
@@ -50,7 +52,9 @@ class App extends Component {
   render() {
     console.log("Latitude:", this.state.userLat);
     console.log("Longitude:", this.state.userLon);
-    const MyMap = () => {
+    console.log('History: ', this.state.history);
+    
+    const myMap = () => {
       return (
         <Map
           restaurants={this.state.restaurants}
@@ -59,16 +63,23 @@ class App extends Component {
         />
       );
     };
-    const WelcomePage = () => {
+    const welcomePage = () => {
       return (
         <Welcome userLat={this.state.userLat} userLon={this.state.userLon} />
       );
     };
+
+    const myHistory = () => {
+      return (
+        <History userHistory={this.state.history} />
+      )
+    }
     return (
       <HashRouter>
         <div className="App">
-          <Route exact path="/" render={WelcomePage} />
-          <Route exact path="/suggestion" render={MyMap} />
+          <Route exact path="/" render={welcomePage} />
+          <Route exact path="/suggestion" render={myMap} />
+          <Route exact path="/history" render={myHistory} />
         </div>
       </HashRouter>
     );

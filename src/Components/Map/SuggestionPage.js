@@ -36,14 +36,14 @@ export class SuggestionPage extends Component {
     });
   };
 
-  
+
   render() {
     const restaurant = [this.props.restaurants.name];
     console.log(this.props.restaurants);
     console.log("Restaurants Length: ", restaurant.length);
-    console.log('Suggestion Lat: ', this.props.userLat);
-    console.log('Suggestion Lon: ', this.props.userLon);
-    console.log('Me: ', '24.803226, 46.705452')
+    // console.log('Suggestion Lat: ', this.props.userLat);
+    // console.log('Suggestion Lon: ', this.props.userLon);
+    // console.log('Me: ', '24.803226, 46.705452')
     return !restaurant.length === 0 ? (
       <BoxLoading />
     ) : (
