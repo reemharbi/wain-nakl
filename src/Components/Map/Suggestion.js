@@ -6,13 +6,14 @@ import photo from '../../Assets/Images/photo.svg'
 import map from '../../Assets/Images/map.svg'
 export default class Suggestion extends Component {
   render() {
+      console.log('Suggestion Restaurants: ', this.props.restaurants)
     return (
       <div>
         <div className="name">
-          <h1 className="rest-name text-center">AlMuzaini's House</h1>
+          <h1 className="rest-name text-center">{this.props.restaurants.name}</h1>
         </div>
         <div className="flex-container">
-        <img src={map} style={{height:'4rem'}} alt='map'></img>
+        <a href={this.props.restaurants.link} target='_blank'><img src={map} style={{height:'4rem'}} alt='map'></img></a>
         <img src={photo} style={{height:'4rem'}} alt='restaurant-images'></img>
         <img src={like} style={{height:'4rem'}} alt='like'></img>
         <img src={share} style={{height:'4rem'}} alt='share'></img>

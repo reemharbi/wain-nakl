@@ -15,14 +15,15 @@ export default class Map extends Component {
     zoom: 20
   };
   render() {
-    return !this.props.restaurants.length ? (
+    console.log('Restaurants Length: ',this.props.restaurants.length)
+    return !this.props.restaurants === null ? (
       <BoxLoading className="loader" />
     ) : (
       <div>
         <div className="navbar">
           <Navbar />
         </div>
-        <Suggestion />
+        <Suggestion restaurants={this.props.restaurants} />
         <div style={{ height: "80vh", width: "100%" }}>
           <GoogleMapReact
             defaultCenter={this.props.center}

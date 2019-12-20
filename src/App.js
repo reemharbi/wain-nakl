@@ -14,12 +14,14 @@ class App extends Component {
   }
 
   componentDidMount(){
-
+    fetch("https://wainnakel.com/api/v1/GenerateFS.php?uid=24.7900733,46.7012105&get_param=value")
+    .then(response => response.json())
+    .then(resSuggestion => this.setState({restaurants: resSuggestion}))
   }
 
   
   render() {
-    const MyMap = (props) => {
+    const MyMap = () => {
        return <Map restaurants={this.state.restaurants} />
      }
 
