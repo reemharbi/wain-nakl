@@ -24,7 +24,11 @@ export default class Nav extends Component {
           </a>
         </div>
         <div className=" item brgr">
-          <a className="nav-title" href="https://www.linkedin.com/in/reemalharbi/" target='_blank'>
+          <a
+            className="nav-title"
+            href="https://www.linkedin.com/in/reemalharbi/"
+            target="_blank"
+          >
             <img style={{ height: "3rem" }} src={burger} alt="burger"></img>
           </a>
         </div>

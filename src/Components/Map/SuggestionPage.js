@@ -10,33 +10,6 @@ const LoadingContainer = props => {
   return <BoxLoading />;
 };
 export class SuggestionPage extends Component {
-  state = {
-    data: [],
-    userLat: 0,
-    userLon: 0,
-    locRendered: false,
-    showingInfoWindow: false,
-    activeMarker: {},
-    selectedPlace: {},
-    redirect: false,
-    redirectId: 0
-  };
-
-  getUserLocation = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(this.showPosition, {timeout: 1000});
-    }
-  };
-
-  showPosition = position => {
-    this.setState({
-      userLat: position.coords.latitude,
-      userLon: position.coords.longitude,
-      locRendered: true
-    });
-  };
-
-
   render() {
     const restaurant = [this.props.restaurants.name];
     console.log(this.props.restaurants);
@@ -60,11 +33,12 @@ export class SuggestionPage extends Component {
           <Map
             google={this.props.google}
             zoom={20}
-            initialCenter={{ lat: `${this.props.userLat}`, lng: `${this.props.userLon}` }}
+            initialCenter={{
+              lat: `${this.props.userLat}`,
+              lng: `${this.props.userLon}`
+            }}
           >
-            <Marker
-            // position={{ lat: 24.7900733, lng: 46.7012105 }}
-            />
+            <Marker />
           </Map>
           <div className="another-suggestion">
             <Link to="/suggestion" className="another-suggestion-btn">

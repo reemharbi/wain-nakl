@@ -34,21 +34,6 @@ class App extends Component {
       .then(resSuggestion => this.setState({ restaurants: resSuggestion }));
   }
 
-  // getUserLocation = async () => {
-  //   await navigator.geolocation.getCurrentPosition(this.showPosition);
-  // };
-
-  // showPosition = position => {
-  //   this.setState(
-  //     {
-  //       userLat: position.coords.latitude,
-  //       userLon: position.coords.longitude,
-  //       locRendered: true
-  //     },
-  //     newState => console.log("hi", newState)
-  //   );
-  // };
-
   render() {
     console.log("Latitude:", this.state.userLat);
     console.log("Longitude:", this.state.userLon);
@@ -63,6 +48,7 @@ class App extends Component {
         />
       );
     };
+
     const welcomePage = () => {
       return (
         <Welcome userLat={this.state.userLat} userLon={this.state.userLon} />
@@ -72,8 +58,9 @@ class App extends Component {
     const myHistory = () => {
       return (
         <History userHistory={this.state.history} />
-      )
-    }
+      );
+    };
+
     return (
       <HashRouter>
         <div className="App">
@@ -85,4 +72,5 @@ class App extends Component {
     );
   }
 }
+
 export default App;
