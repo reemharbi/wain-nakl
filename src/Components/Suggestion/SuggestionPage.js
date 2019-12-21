@@ -12,8 +12,6 @@ const LoadingContainer = props => {
 export class SuggestionPage extends Component {
   render() {
     const restaurant = [this.props.restaurants.name];
-    console.log(this.props.restaurants);
-    console.log("Restaurants Length: ", restaurant.length);
     return !restaurant.length === 0 ? (
       <BoxLoading />
     ) : (

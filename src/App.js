@@ -35,10 +35,7 @@ class App extends Component {
   }
 
   render() {
-    console.log("Latitude:", this.state.userLat);
-    console.log("Longitude:", this.state.userLon);
-    console.log('History: ', this.state.history);
-    
+     
     const myMap = () => {
       return (
         <Map

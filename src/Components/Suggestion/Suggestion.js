@@ -6,7 +6,6 @@ import photo from "../../Assets/Images/photo.svg";
 import map from "../../Assets/Images/map.svg";
 export default class Suggestion extends Component {
   render() {
-    console.log("Suggestion Restaurants: ", this.props.restaurants);
     return (
       <div>
         <div className="name">
