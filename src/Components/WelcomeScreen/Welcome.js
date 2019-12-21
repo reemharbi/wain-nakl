@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import logo from "../../Assets/Images/wain-nakl.png";
 import "./Welcome.css";
 import { Link } from "react-router-dom";

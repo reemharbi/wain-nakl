@@ -27,7 +27,7 @@ export default class Nav extends Component {
           <a
             className="nav-title"
             href="https://www.linkedin.com/in/reemalharbi/"
-            target="_blank"
+            target="_blank" rel="noopener noreferrer"
           >
             <img style={{ height: "3rem" }} src={burger} alt="burger"></img>
           </a>

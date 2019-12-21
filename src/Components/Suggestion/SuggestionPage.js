@@ -4,7 +4,7 @@ import Suggestion from "./Suggestion";
 import { BoxLoading } from "react-loadingg";
 import { Link } from "react-router-dom";
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
-import "./Map.css";
+import "./SuggestionPage.css";
 
 const LoadingContainer = props => {
   return <BoxLoading />;
@@ -14,9 +14,6 @@ export class SuggestionPage extends Component {
     const restaurant = [this.props.restaurants.name];
     console.log(this.props.restaurants);
     console.log("Restaurants Length: ", restaurant.length);
-    // console.log('Suggestion Lat: ', this.props.userLat);
-    // console.log('Suggestion Lon: ', this.props.userLon);
-    // console.log('Me: ', '24.803226, 46.705452')
     return !restaurant.length === 0 ? (
       <BoxLoading />
     ) : (
@@ -42,7 +39,7 @@ export class SuggestionPage extends Component {
           </Map>
           <div className="another-suggestion">
             <Link to="/suggestion" className="another-suggestion-btn">
-              اقترح أخر
+              اقتراح أخر
             </Link>
           </div>
         </div>

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Welcome from "./Components/WelcomeScreen/Welcome";
-import Map from "./Components/Map/SuggestionPage";
+import Map from "./Components/Suggestion/SuggestionPage";
 import History from './Components/History/HistoryList';
-import { BrowserRouter as Router, Route, HashRouter } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 
 class App extends Component {
@@ -62,13 +62,13 @@ class App extends Component {
     };
 
     return (
-      <HashRouter>
+      <Router>
         <div className="App">
           <Route exact path="/" render={welcomePage} />
           <Route exact path="/suggestion" render={myMap} />
           <Route exact path="/history" render={myHistory} />
         </div>
-      </HashRouter>
+      </Router>
     );
   }
 }
