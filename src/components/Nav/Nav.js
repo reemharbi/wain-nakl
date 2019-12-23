@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import burger from "../../Assets/Images/bars-solid.svg";
-import history from "../../Assets/Images/history.svg";
+import burger from "../../apps/assets/images/bars-solid.svg";
+import history from "../../apps/assets/images/history.svg";
 import "./Nav.css";
-import logo from "../../Assets/Images/wain-nakl.png";
+import logo from "../../apps/assets/images/wain-nakl.png";
 import { Link } from "react-router-dom";
 
 export default class Nav extends Component {

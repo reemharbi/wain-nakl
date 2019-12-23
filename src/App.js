@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Welcome from "./Components/WelcomeScreen/Welcome";
-import MainComponent from "./Components/Suggestion/MainComponent";
-import History from "./Components/History/HistoryList";
+import Welcome from "./components/WelcomeScreen/Welcome";
+import MainComponent from "./components/Suggestion/MainComponent";
+import History from "./components/History/HistoryList";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 
@@ -19,11 +19,13 @@ class App extends Component {
     };
   }
 
+  // get user coordinates 
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(position => {
       this.setUserCoordination(position).then(res => this.apiCall());
     });
   }
+  // waits for api response to store user coordinates in state
   setUserCoordination = async position =>
     await this.setState({
       userLat: position.coords.latitude,
@@ -31,8 +33,8 @@ class App extends Component {
       userAcc: position.coords.accuracy
     });
 
+    // use user coordinates to fetch restaurants' suggestions and details from api
   apiCall() {
-    console.log("api CALL!!!")
     fetch(
       `https://wainnakel.com/api/v1/GenerateFS.php?uid=${this.state.userLat},${this.state.userLon}&get_param=value`
     )
@@ -43,9 +45,9 @@ class App extends Component {
           resLat: resSuggestion.lat,
           resLon: resSuggestion.lon
         });
-        console.log('ResSuggestion: ',resSuggestion);
-        console.log('ResLon: ',this.state.resLon);
-        console.log('ResLat: ',this.state.resLat);
+        console.log('APP ResSuggestion: ',resSuggestion);
+        console.log('APP ResLon: ',this.state.resLon);
+        console.log('APP ResLat: ',this.state.resLat);
       })
       .catch(err => console.log(err.message));
   }
@@ -77,6 +79,7 @@ class App extends Component {
     };
 
     return (
+      // routes to render views 
       <Router>
         <div className="App">
           <Route exact path="/" render={welcomePage} />

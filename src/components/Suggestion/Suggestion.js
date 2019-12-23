@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import "./Suggestion.css";
-import share from "../../Assets/Images/upload.svg";
-import like from "../../Assets/Images/like.svg";
-import photo from "../../Assets/Images/photo.svg";
-import map from "../../Assets/Images/map.svg";
+import share from "../../apps/assets/images/upload.svg";
+import like from "../../apps/assets/images/like.svg";
+import photo from "../../apps/assets/images/photo.svg";
+import map from "../../apps/assets/images/map.svg";
+
+// display the restaurants details
 export default class Suggestion extends Component {
   render() {
     return (

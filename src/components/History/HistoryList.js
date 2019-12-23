@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Navbar from "../Nav/Nav";
 import { BoxLoading } from "react-loadingg";
 
+// list user's favorite restaurants 
 class HistoryList extends Component {
   render() {
     return this.props.userHistory ? (

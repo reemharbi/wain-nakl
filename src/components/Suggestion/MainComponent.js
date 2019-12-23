@@ -3,22 +3,24 @@ import Navbar from "../Nav/Nav";
 import Suggestion from "./Suggestion";
 import { BoxLoading } from "react-loadingg";
 import { Link } from "react-router-dom";
-import { Map, InfoWindow, GoogleApiWrapper, Marker } from "google-maps-react";
+import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
 import "./MainComponent.css";
 
+// show loading page while fetching information
 const LoadingContainer = () => {
   return <BoxLoading />;
 };
 export class MainComponent extends Component {
   render() {
-    console.log("Main COORDS: ", this.props.resLat, this.props.resLon);
-    const restaurant = [this.props.restaurants.name];
-    return !restaurant.length === 0 ? (
-      <BoxLoading />
-    ) : (
+    //  
+    // console.log("Main Component COORDS: ", this.props.resLat, this.props.resLon);
+    // 
+
+    // display suggestion's information and map
+    return (
       <div>
         <div className="main-suggestion">
-          <div>
+          <div>shows
             <Navbar />
           </div>
           <div className="suggestion-container">
@@ -26,6 +28,7 @@ export class MainComponent extends Component {
           </div>
         </div>
         <div className="map-container">
+          {/* google map component */}
           <Map
             google={this.props.google}
             zoom={20}
@@ -67,6 +70,7 @@ export class MainComponent extends Component {
   }
 }
 
+// exporting loader page / api key as HOC 
 export default GoogleApiWrapper({
   apiKey: "AIzaSyDhNIRrD0JHn5PNrN22tDnGuCwm4-jo8lk",
   LoadingContainer: LoadingContainer

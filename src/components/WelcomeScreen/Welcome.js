@@ -1,9 +1,10 @@
 import React from "react";
-import logo from "../../Assets/Images/wain-nakl.png";
+import logo from "../../apps/assets/images/wain-nakl.png";
 import "./Welcome.css";
 import { Link } from "react-router-dom";
 
-const Welcome = getUserLocation => {
+// landing view 
+const Welcome = () => {
   return (
     <div className="main-main">
       <div className="main">
@@ -16,6 +17,7 @@ const Welcome = getUserLocation => {
             ></img>
           </div>
           <p className="title animated pulse">وين ناكل؟</p>
+         {/* this loads the suggestion view */}
           <Link
             to="/suggestion"
             className="btn animated fadeIn"
