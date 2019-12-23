@@ -13,52 +13,59 @@ class App extends Component {
       history: [],
       restaurants: [],
       userLat: null,
-      userLon: null
+      userLon: null,
+      resLat: null,
+      resLon: null
     };
   }
 
-  componentWillMount() {
-    this.apiCall();
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition(p => {
+      this.setUserCoordination(p).then(res => this.apiCall());
+    });
   }
 
-  userCoordinates = navigator.geolocation.getCurrentPosition(p =>
-    this.setState({ userLat: p.coords.latitude, userLon: p.coords.longitude })
-  );
+  setUserCoordination = async p =>
+    await this.setState({
+      userLat: p.coords.latitude,
+      userLon: p.coords.longitude
+    });
 
-  apiCall(){
+  apiCall() {
     fetch(
       `https://cors-anywhere.herokuapp.com/https://wainnakel.com/api/v1/GenerateFS.php?uid=${this.state.userLat},${this.state.userLon}&get_param=value`
     )
       .then(response => response.json())
       .then(resSuggestion => {
-        this.setState({ 
-          restaurants: resSuggestion ,
-          userLat: resSuggestion.lat ,
-          userLon: resSuggestion.lon
-          
-        })
-        console.log(resSuggestion)
-    
-    }).catch(err => console.log(err.message));
-
-    console.log(this.state.userLat)
-
+        this.setState({
+          restaurants: resSuggestion,
+          resLat: resSuggestion.Ulat,
+          resLon: resSuggestion.Ulon
+        });
+        console.log(resSuggestion);
+        console.log('ResLon: ',this.state.resLon);
+        console.log('ResLat: ',this.state.resLat);
+      })
+      .catch(err => console.log(err.message));
   }
 
   render() {
+    console.log(this.state.userLat);
+    console.log(this.state.userLon);
+
     const myMap = () => {
       return (
         <MainComponent
           restaurants={this.state.restaurants}
-          userLat={this.state.userLat}
-          userLon={this.state.userLon}
+          resLat={this.state.resLat}
+          resLon={this.state.resLon}
         />
       );
     };
 
     const welcomePage = () => {
       return (
-        <Welcome userLat={this.state.userLat} userLon={this.state.userLon} />
+        <Welcome userLat={this.state.userLat} userLon={this.state.userLon} resLat={this.state.resLat} resLon={this.state.resLon} />
       );
     };
 

@@ -29,8 +29,8 @@ export class MainComponent extends Component {
             google={this.props.google}
             zoom={20}
             initialCenter={{
-              lat: `${this.props.userLat}`,
-              lng: `${this.props.userLon}`
+              lat: `${this.props.resLat}`,
+              lng: `${this.props.resLon}`
             }}
           >
             <Marker />
