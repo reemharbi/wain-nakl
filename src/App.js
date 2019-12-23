@@ -1,35 +1,51 @@
 import React, { Component } from "react";
 import Welcome from "./Components/WelcomeScreen/Welcome";
 import MainComponent from "./Components/Suggestion/MainComponent";
-import History from './Components/History/HistoryList';
+import History from "./Components/History/HistoryList";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 
 class App extends Component {
   constructor() {
     super();
+    this.apiCall = this.apiCall.bind(this);
     this.state = {
       history: [],
       restaurants: [],
       userLat: null,
-      userLon: null,
-     };
+      userLon: null
+    };
+  }
+
+  componentWillMount() {
+    this.apiCall();
   }
 
   userCoordinates = navigator.geolocation.getCurrentPosition(p =>
     this.setState({ userLat: p.coords.latitude, userLon: p.coords.longitude })
   );
 
-  componentDidMount() {
+  apiCall(){
     fetch(
       `https://cors-anywhere.herokuapp.com/https://wainnakel.com/api/v1/GenerateFS.php?uid=${this.state.userLat},${this.state.userLon}&get_param=value`
     )
       .then(response => response.json())
-      .then(resSuggestion => this.setState({ restaurants: resSuggestion }));
+      .then(resSuggestion => {
+        this.setState({ 
+          restaurants: resSuggestion ,
+          userLat: resSuggestion.lat ,
+          userLon: resSuggestion.lon
+          
+        })
+        console.log(resSuggestion)
+    
+    }).catch(err => console.log(err.message));
+
+    console.log(this.state.userLat)
+
   }
 
   render() {
-     
     const myMap = () => {
       return (
         <MainComponent
@@ -47,9 +63,7 @@ class App extends Component {
     };
 
     const myHistory = () => {
-      return (
-        <History userHistory={this.state.history} />
-      );
+      return <History userHistory={this.state.history} />;
     };
 
     return (
