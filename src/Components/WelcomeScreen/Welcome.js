@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Welcome = getUserLocation => {
   return (
     <div className="main-main">
-      <div className={`main`}>
+      <div className="main">
         <div className="container">
           <div className="logo-container">
             <img

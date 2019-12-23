@@ -4,12 +4,12 @@ import Suggestion from "./Suggestion";
 import { BoxLoading } from "react-loadingg";
 import { Link } from "react-router-dom";
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
-import "./SuggestionPage.css";
+import "./MainComponent.css";
 
 const LoadingContainer = props => {
   return <BoxLoading />;
 };
-export class SuggestionPage extends Component {
+export class MainComponent extends Component {
   render() {
     const restaurant = [this.props.restaurants.name];
     return !restaurant.length === 0 ? (
@@ -49,4 +49,4 @@ export class SuggestionPage extends Component {
 export default GoogleApiWrapper({
   apiKey: "AIzaSyDhNIRrD0JHn5PNrN22tDnGuCwm4-jo8lk",
   LoadingContainer: LoadingContainer
-})(SuggestionPage);
+})(MainComponent);

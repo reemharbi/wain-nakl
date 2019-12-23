@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Welcome from "./Components/WelcomeScreen/Welcome";
-import Map from "./Components/Suggestion/SuggestionPage";
+import MainComponent from "./Components/Suggestion/MainComponent";
 import History from './Components/History/HistoryList';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
@@ -11,15 +11,9 @@ class App extends Component {
     this.state = {
       history: [],
       restaurants: [],
-      userLat: 0,
-      userLon: 0,
-      locRendered: false,
-      showingInfoWindow: false,
-      activeMarker: {},
-      selectedPlace: {},
-      redirect: false,
-      redirectId: 0
-    };
+      userLat: null,
+      userLon: null,
+     };
   }
 
   userCoordinates = navigator.geolocation.getCurrentPosition(p =>
@@ -38,7 +32,7 @@ class App extends Component {
      
     const myMap = () => {
       return (
-        <Map
+        <MainComponent
           restaurants={this.state.restaurants}
           userLat={this.state.userLat}
           userLon={this.state.userLon}
