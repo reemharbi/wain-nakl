@@ -15,11 +15,11 @@ export default class Nav extends Component {
           </Link>
         </div>
         <div className="nav-item text-center">
-          <a className="nav-title" href="/">
+          <a className="nav-title" href="/wain-nakl">
             وين ناكل؟
           </a>
 
-          <a className="nav-title" href="/">
+          <a className="nav-title" href="/wain-nakl">
             <img style={{ height: "4rem" }} src={logo} alt="logo"></img>
           </a>
         </div>
