@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d6d698c52f49f2d00b8bd1dccd1e7758",
+    "revision": "c0e14bf6cda202f221134ac30f0eb090",
     "url": "/wain-nakl/index.html"
   },
   {
-    "revision": "ffc08f9b9e27e4cf097d",
+    "revision": "a7665e72108dc0110a29",
     "url": "/wain-nakl/static/css/main.b0aa880d.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wain-nakl/static/js/2.f4fa4234.chunk.js.LICENSE"
   },
   {
-    "revision": "ffc08f9b9e27e4cf097d",
-    "url": "/wain-nakl/static/js/main.ef7248cd.chunk.js"
+    "revision": "a7665e72108dc0110a29",
+    "url": "/wain-nakl/static/js/main.de7472c2.chunk.js"
   },
   {
     "revision": "7bc5ca10a6a01aed69f4",

@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/wain-nakl/static/css/main.b0aa880d.chunk.css",
-    "main.js": "/wain-nakl/static/js/main.ef7248cd.chunk.js",
-    "main.js.map": "/wain-nakl/static/js/main.ef7248cd.chunk.js.map",
+    "main.js": "/wain-nakl/static/js/main.de7472c2.chunk.js",
+    "main.js.map": "/wain-nakl/static/js/main.de7472c2.chunk.js.map",
     "runtime-main.js": "/wain-nakl/static/js/runtime-main.bd859618.js",
     "runtime-main.js.map": "/wain-nakl/static/js/runtime-main.bd859618.js.map",
     "static/js/2.f4fa4234.chunk.js": "/wain-nakl/static/js/2.f4fa4234.chunk.js",
     "static/js/2.f4fa4234.chunk.js.map": "/wain-nakl/static/js/2.f4fa4234.chunk.js.map",
     "index.html": "/wain-nakl/index.html",
-    "precache-manifest.37adfb1c8071ca6f6942abc1e3ef11ca.js": "/wain-nakl/precache-manifest.37adfb1c8071ca6f6942abc1e3ef11ca.js",
+    "precache-manifest.edb6ec392923dc39098e7e47c16621dc.js": "/wain-nakl/precache-manifest.edb6ec392923dc39098e7e47c16621dc.js",
     "service-worker.js": "/wain-nakl/service-worker.js",
     "static/css/main.b0aa880d.chunk.css.map": "/wain-nakl/static/css/main.b0aa880d.chunk.css.map",
     "static/js/2.f4fa4234.chunk.js.LICENSE": "/wain-nakl/static/js/2.f4fa4234.chunk.js.LICENSE",
@@ -25,6 +25,6 @@
     "static/js/runtime-main.bd859618.js",
     "static/js/2.f4fa4234.chunk.js",
     "static/css/main.b0aa880d.chunk.css",
-    "static/js/main.ef7248cd.chunk.js"
+    "static/js/main.de7472c2.chunk.js"
   ]
 }
