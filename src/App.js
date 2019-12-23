@@ -20,29 +20,30 @@ class App extends Component {
   }
 
   componentDidMount() {
-    navigator.geolocation.getCurrentPosition(p => {
-      this.setUserCoordination(p).then(res => this.apiCall());
+    navigator.geolocation.getCurrentPosition(position => {
+      this.setUserCoordination(position).then(res => this.apiCall());
     });
   }
-
-  setUserCoordination = async p =>
+  setUserCoordination = async position =>
     await this.setState({
-      userLat: p.coords.latitude,
-      userLon: p.coords.longitude
+      userLat: position.coords.latitude,
+      userLon: position.coords.longitude,
+      userAcc: position.coords.accuracy
     });
 
   apiCall() {
+    console.log("api CALL!!!")
     fetch(
-      `https://cors-anywhere.herokuapp.com/https://wainnakel.com/api/v1/GenerateFS.php?uid=${this.state.userLat},${this.state.userLon}&get_param=value`
+      `https://wainnakel.com/api/v1/GenerateFS.php?uid=${this.state.userLat},${this.state.userLon}&get_param=value`
     )
       .then(response => response.json())
       .then(resSuggestion => {
         this.setState({
           restaurants: resSuggestion,
-          resLat: resSuggestion.Ulat,
-          resLon: resSuggestion.Ulon
+          resLat: resSuggestion.lat,
+          resLon: resSuggestion.lon
         });
-        console.log(resSuggestion);
+        console.log('ResSuggestion: ',resSuggestion);
         console.log('ResLon: ',this.state.resLon);
         console.log('ResLat: ',this.state.resLat);
       })
@@ -50,8 +51,9 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.userLat);
-    console.log(this.state.userLon);
+    console.log('APP UserLat: ',this.state.userLat);
+    console.log('APP UserLon: ',this.state.userLon);
+    console.log('APP User Accuracy: ',this.state.userAcc);
 
     const myMap = () => {
       return (
@@ -59,6 +61,7 @@ class App extends Component {
           restaurants={this.state.restaurants}
           resLat={this.state.resLat}
           resLon={this.state.resLon}
+          apiCall={this.apiCall}
         />
       );
     };

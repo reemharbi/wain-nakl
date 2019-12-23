@@ -3,14 +3,15 @@ import Navbar from "../Nav/Nav";
 import Suggestion from "./Suggestion";
 import { BoxLoading } from "react-loadingg";
 import { Link } from "react-router-dom";
-import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
+import { Map, InfoWindow, GoogleApiWrapper, Marker } from "google-maps-react";
 import "./MainComponent.css";
 
-const LoadingContainer = props => {
+const LoadingContainer = () => {
   return <BoxLoading />;
 };
 export class MainComponent extends Component {
   render() {
+    console.log("Main COORDS: ", this.props.resLat, this.props.resLon);
     const restaurant = [this.props.restaurants.name];
     return !restaurant.length === 0 ? (
       <BoxLoading />
@@ -32,11 +33,31 @@ export class MainComponent extends Component {
               lat: `${this.props.resLat}`,
               lng: `${this.props.resLon}`
             }}
+            center={{
+              lat: `${this.props.resLat}`,
+              lng: `${this.props.resLon}`
+            }}
           >
-            <Marker />
+            <Marker
+              google={this.props.google}
+              position={{
+                lat: `${this.props.resLat}`,
+                lng: `${this.props.resLon}`
+              }}
+              icon={{
+                url:
+                  "https://i.postimg.cc/xdXCkVC4/marker-1-1s-128px.png",
+                anchor: new this.props.google.maps.Point(32, 32),
+                scaledSize: new this.props.google.maps.Size(80, 80)
+              }}
+            />
           </Map>
           <div className="another-suggestion">
-            <Link to="/suggestion" className="another-suggestion-btn">
+            <Link
+              to="/suggestion"
+              className="another-suggestion-btn"
+              onClick={this.props.apiCall}
+            >
               اقتراح أخر
             </Link>
           </div>
