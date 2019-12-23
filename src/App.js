@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Welcome from "./components/WelcomeScreen/Welcome";
 import MainComponent from "./components/Suggestion/MainComponent";
 import History from "./components/History/HistoryList";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, HashRouter } from "react-router-dom";
 import "./App.css";
 
 class App extends Component {
@@ -80,13 +80,13 @@ class App extends Component {
 
     return (
       // routes to render views 
-      <Router>
+      <HashRouter>
         <div className="App">
           <Route exact path="/" render={welcomePage} />
           <Route exact path="/suggestion" render={myMap} />
           <Route exact path="/history" render={myHistory} />
         </div>
-      </Router>
+      </HashRouter>
     );
   }
 }
