@@ -36,7 +36,7 @@ class App extends Component {
     // use user coordinates to fetch restaurants' suggestions and details from api
   apiCall() {
     fetch(
-      `https://wainnakel.com/api/v1/GenerateFS.php?uid=${this.state.userLat},${this.state.userLon}&get_param=value`
+      `https://cors-anywhere.herokuapp.com/https://wainnakel.com/api/v1/GenerateFS.php?uid=${this.state.userLat},${this.state.userLon}&get_param=value`
     )
       .then(response => response.json())
       .then(resSuggestion => {
